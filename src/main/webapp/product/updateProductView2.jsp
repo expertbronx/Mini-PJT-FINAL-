@@ -112,7 +112,7 @@ function resetData(){
 		<div class="row">
 	  		<div class="col-xs-4 col-md-2 "><strong>상품 상세정보</strong></div>
 			<div class="col-xs-8 col-md-4"><input type="text" name="prodDetail" value="${productVO.prodDetail}" class="form-control" 
-						style="width: 100px; height: 19px" maxLength="10" minLength="6"/></div>
+						style="width: 100px; height: 19px" maxLength="50" minLength="6"/></div>
 		</div>
 		
 		<hr/>
