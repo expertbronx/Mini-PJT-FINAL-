@@ -116,6 +116,7 @@ function resetData(){
 		
 		<div class="row">
 	  		<div class="col-xs-4 col-md-2 "><strong>제조일자</strong></div>
+
 			<div class="col-xs-8 col-md-4"><input type="date" name="manuDate"  class="form-control"  
 						style="width: 100px; height: 19px"	maxLength="10" minLength="6"/>
 				</div>

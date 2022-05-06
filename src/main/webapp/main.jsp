@@ -98,7 +98,8 @@
         	<h3><span class="label label-danger">HOT</span> ${map.list[i.index].prodName}</h3>
         	<p><h4><strong>상품설명</strong></h4> ${map.list[i.index].prodDetail}</p>
         	<p><h4><strong>가격</strong></h4> ${map.list[i.index].price}</p>
-        	<p><a href="/purchase/addPurchaseView?currentPage=1&prodNo=${map.list[i.index].prodNo}" class="btn btn-primary" value="${map.list[i.index].prodNo}" role="button">구매</a> <a href="/product/getProduct?currentPage=1&prodNo=${map.list[i.index].prodNo}" class="btn btn-default" role="button">상세보기</a></p>
+
+        	<p><a href="/product/getProduct?currentPage=1&prodNo=${map.list[i.index].prodNo}" class="btn btn-primary" value="${map.list[i.index].prodNo}" role="button">구매</a> <a href="#" class="btn btn-default" role="button">상세보기</a></p>
       	</div>
     	</div>
   	</div>
