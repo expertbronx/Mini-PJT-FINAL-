@@ -185,7 +185,7 @@
 		
       <!--  table Start /////////////////////////////////////-->
       <table class="table table-hover table-striped" >
-      
+      <c:if test="${menu eq 'manage'}">
         <thead>
           <tr>
             <th align="center">No</th>
@@ -195,7 +195,7 @@
             <th align="left">남은 수량</th>
           </tr>
         </thead>
-       
+            </c:if>
 		<tbody>
 		
 		
@@ -218,21 +218,30 @@
         </c:if>
         
         		<c:if test="${menu eq 'search'}">
-		  <c:forEach items="${map.list}" var="var" varStatus="i">
-		  	
-			<tr>
-			  <td align="center">${map.list[i.index].prodNo}</td>
-			  <td class = "search" align="left"  title="Click : 상품정보 확인" value="${map.list[i.index].prodNo}">${map.list[i.index].prodName}</td>
-			  <td align="left">${map.list[i.index].price}</td>
-			  <td align="left">${map.list[i.index].regDate}</td>
-			  <td align="left">
-		  <jsp:include page="/purchase/GetPurchase.jsp">
-				<jsp:param name="count" value="${i.index}"/>
-			</jsp:include>	
-			  </td>
-			</tr>
-			
-          </c:forEach>
+<div class="container" >
+	
+	<div class="row">
+	<c:forEach items="${map.list}" var="var" varStatus="i">	
+  	<div class="col-sm-6 col-md-4">
+    	<div class="thumbnail">
+    	<c:if test="${!empty map.list[i.index].fileName}">
+      	<img class="img-responsive" src="/images/uploadFiles/${map.list[i.index].fileName}" alt="" width="200" height="200">
+      	</c:if>
+      	<c:if test="${empty map.list[i.index].fileName}">
+      	<img class="img-responsive" src="/images/uploadFiles/noimage.png" alt="no image"  width="200" height="200">
+      	</c:if>
+      	<div class="caption">
+        	<h3> ${map.list[i.index].prodName}</h3>
+        	<p><h4><strong>상품설명</strong></h4> ${map.list[i.index].prodDetail}</p>
+        	<p><h4><strong>가격</strong></h4> ${map.list[i.index].price}</p>
+        	<p><a href="/purchase/addPurchaseView?currentPage=1&prodNo=${map.list[i.index].prodNo}" class="btn btn-primary" value="${map.list[i.index].prodNo}" role="button">구매</a> <a href="/product/getProduct?currentPage=${searchVO.currentPage}&prodNo=${map.list[i.index].prodNo}" class="btn btn-default" role="button">상세보기</a></p>
+      	</div>
+    	</div>
+  	</div>
+  	    	</c:forEach>
+	</div>
+	
+  	 </div>
         </c:if>
         
         </tbody>

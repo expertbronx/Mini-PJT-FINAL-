@@ -153,7 +153,20 @@
 		});	
 
 	</script>		
-    
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+window.onload = function(){
+    document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
+        //카카오 지도 발생
+        new daum.Postcode({
+            oncomplete: function(data) { //선택시 입력값 세팅
+                document.getElementById("address_kakao").value = data.address; // 주소 넣기
+                document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+            }
+        }).open();
+    });
+}
+</script>
 </head>
 
 <body>
@@ -206,14 +219,14 @@
 		  <div class="form-group">
 		    <label for="userName" class="col-sm-offset-1 col-sm-3 control-label">이름</label>
 		    <div class="col-sm-4">
-		      <input type="password" class="form-control" id="userName" name="userName" placeholder="회원이름">
+		      <input type="text" class="form-control" id="userName" name="userName" placeholder="회원이름">
 		    </div>
 		  </div>
 		  
 		  <div class="form-group">
 		    <label for="ssn" class="col-sm-offset-1 col-sm-3 control-label">주민번호</label>
 		    <div class="col-sm-4">
-		      <input type="text" class="form-control" id="ssn" name="ssn" placeholder="주민번호">
+		      <input type="password" class="form-control" id="ssn" name="ssn" placeholder="주민번호">
 		      <span id="helpBlock" class="help-block">
 		      	 <strong class="text-danger">" -  " 제외 13자리입력하세요</strong>
 		      </span>
@@ -223,7 +236,14 @@
 		  <div class="form-group">
 		    <label for="ssn" class="col-sm-offset-1 col-sm-3 control-label">주소</label>
 		    <div class="col-sm-4">
-		      <input type="text" class="form-control" id="addr" name="addr" placeholder="주소">
+		      <input type="text" class="form-control" id="address_kakao" name="addr" placeholder="주소">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="ssn" class="col-sm-offset-1 col-sm-3 control-label">상세주소</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control" id="address_detail" name="address_detail" placeholder="상세주소">
 		    </div>
 		  </div>
 		  

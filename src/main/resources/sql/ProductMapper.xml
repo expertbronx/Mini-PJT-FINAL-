@@ -23,7 +23,7 @@
 	<insert 	id="insertProduct"		parameterType="product" >
 	 	INSERT
 		INTO product
-		VALUES	 ( seq_product_prod_no.nextval , #{prodName} , #{prodDetail} , #{manuDate} ,  
+		VALUES	 ( seq_product_prod_no.nextval , #{prodName} , #{prodDetail} , TO_DATE(#{manuDate}, 'yy/mm/dd') ,  
 							#{price} , #{fileName} , SYSDATE , #{quantity} )
 	 </insert>
 	 

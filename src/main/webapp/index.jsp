@@ -50,6 +50,13 @@
 			});
 		});
 		
+		$( function() {
+			//==> 추가된부분 : "addUser"  Event 연결
+			$("a[href='#' ]:contains('상품검색')").on("click" , function() {
+				self.location = "/product/listProduct?menu=search"
+			});
+		});
+		
 	</script>	
 	
 </head>
@@ -97,35 +104,7 @@
 			<div class="col-md-3">
 		        
 		       	<!--  회원관리 목록에 제목 -->
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<i class="glyphicon glyphicon-heart"></i> 회원관리
-         			</div>
          			<!--  회원관리 아이템 -->
-					<ul class="list-group">
-						 <li class="list-group-item">
-						 	<a href="#">개인정보조회</a> <i class="glyphicon glyphicon-ban-circle"></i>
-						 </li>
-						 <li class="list-group-item">
-						 	<a href="#">회원정보조회</a> <i class="glyphicon glyphicon-ban-circle"></i>
-						 </li>
-					</ul>
-		        </div>
-               
-               
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-							<i class="glyphicon glyphicon-briefcase"></i> 판매상품관리
-         			</div>
-					<ul class="list-group">
-						 <li class="list-group-item">
-						 	<a href="#">판매상품등록</a> <i class="glyphicon glyphicon-ban-circle"></i>
-						 </li>
-						 <li class="list-group-item">
-						 	<a href="#">판매상품관리</a> <i class="glyphicon glyphicon-ban-circle"></i>
-						 </li>
-					</ul>
-		        </div>
                
                
 				<div class="panel panel-primary">
@@ -134,12 +113,7 @@
 	    			</div>
 					<ul class="list-group">
 						 <li class="list-group-item"><a href="#">상품검색</a></li>
-						  <li class="list-group-item">
-						  	<a href="#">구매이력조회</a> <i class="glyphicon glyphicon-ban-circle"></i>
-						  </li>
-						 <li class="list-group-item">
-						 	<a href="#">최근본상품</a> <i class="glyphicon glyphicon-ban-circle"></i>
-						 </li>
+
 					</ul>
 				</div>
 				
@@ -149,7 +123,7 @@
 	 	 	<!--  Main start /////////////////////////////////////-->   		
 	 	 	<div class="col-md-9">
 				<div class="jumbotron">
-			  		<h1>Model2 MVC Shop</h1>
+			  		<h1>행스터</h1>
 			  		<p>로그인 후 사용가능...</p>
 			  		<p>로그인 전 검색만 가능합니다.</p>
 			  		<p>회원가입 하세요.</p>

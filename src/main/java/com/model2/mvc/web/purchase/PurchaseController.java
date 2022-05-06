@@ -54,6 +54,11 @@ public class PurchaseController {
 	//@Value("#{commonProperties['pageSize'] ?: 2}")
 	int pageSize;
 	
+	@RequestMapping(value = "statistics")
+	public String statistics() throws Exception {
+	return "forward:/statistics.jsp";
+}
+	
 	@RequestMapping(value = "addPurchaseView", method = RequestMethod.GET)
 	public String addPurchaseView( @RequestParam("prodNo") String prodNo, 
 														@RequestParam("currentPage") int currentPage,
@@ -64,7 +69,7 @@ public class PurchaseController {
 	return "forward:/purchase/addPurchaseView.jsp";
 }
 	
-	@RequestMapping(value = "addPurchase", method = RequestMethod.POST)
+	@RequestMapping(value = "addPurchase")
 	public String addPurchase( @ModelAttribute("pvo") Purchase purchase,
 														 @RequestParam("prodNo") String prodNo,
 														 @RequestParam("currentPage") int currentPage,

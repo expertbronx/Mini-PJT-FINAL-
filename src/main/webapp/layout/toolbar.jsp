@@ -10,7 +10,7 @@
 	
 	<div class="container">    
 		<a class="navbar-brand" href="/index.jsp">		
-		<nav class="navbar navbar-light bg-light">
+		<nav id="navColor" class="navbar navbar-light bg-light">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
 </svg> 행스터 
@@ -29,7 +29,7 @@
 		<!-- toolBar Button End //////////////////////// -->
 		
 	    <!--  dropdown hover Start -->
-		<div 	class="collapse navbar-collapse" id="target" 
+		<div class="collapse navbar-collapse" id="target" 
 	       			data-hover="dropdown" data-animations="fadeInDownNew fadeInRightNew fadeInUpNew fadeInLeftNew">
 	         
 	         	<!-- Tool Bar 를 다양하게 사용하면.... -->
@@ -48,8 +48,6 @@
 	                         	<li><a href="#">회원정보조회</a></li>
 	                         </c:if>
 	                         
-	                         <li class="divider"></li>
-	                         <li><a href="#">etc...</a></li>
 	                     </ul>
 	                 </li>
 	                 
@@ -63,8 +61,6 @@
 		                     <ul class="dropdown-menu">
 		                         <li><a href="#">판매상품 등록</a></li>
 		                         <li><a href="#">판매상품 관리</a></li>
-		                         <li class="divider"></li>
-		                         <li><a href="#">etc..</a></li>
 		                     </ul>
 		                </li>
 	                 </c:if>
@@ -82,9 +78,6 @@
 	                           <li><a href="#">구매목록조회</a></li>
 	                         </c:if>
 	                         
-	                         <li><a href="#">최근본상품</a></li>
-	                         <li class="divider"></li>
-	                         <li><a href="#">etc..</a></li>
 	                     </ul>
 	                 </li>
 	                 
@@ -172,6 +165,11 @@
 	 	$( "a:contains('배송관리')" ).on("click" , function() {
 	 		//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
 			$(self.location).attr("href","/purchase/listTransaction");
+		});
+	 	
+	 	$( "a:contains('판매 통계')" ).on("click" , function() {
+	 		//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			$(self.location).attr("href","/purchase/statistics");
 		});
 
 		
